@@ -13,8 +13,11 @@ paperI = tk.PhotoImage(file = "paper.png")
 scissorI = tk.PhotoImage(file = "scissors.png")
 myFont = Font(family="Times New Roman,", size=16)
 
+#generate random choice for computer
 def RCompChoice():
     return random.choice(["rock","paper","scissor"])
+
+#Determines outcome of the game, updates the score accordingly and displays result on GUI interface
 def result(x,y):
     global UserScore
     global CompScore
@@ -37,6 +40,7 @@ def result(x,y):
     TextArea.place(x=200,y=200)
     answer="Your Choice:  {UC} \n\nComputer's Choice: {CC}\n\nYour Score: {US} \n\nComputer's Score: {CS}".format(UC=UserChoice,CC=CompChoice,US=UserScore,CS=CompScore)
     TextArea.insert(tk.END,answer)
+
 def rock():
     global UserChoice
     global CompChoice
